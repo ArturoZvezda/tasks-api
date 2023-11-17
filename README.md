@@ -19,7 +19,7 @@ funcionar con otra si se cambia la configuracion en el archivo correspondiente.
 
    ```bash
    git clone https://github.com/ArturoZvezda/tasks-api.git
-   cd api-gestion-tareas
+   cd tasks-api
 2. Instala las dependencias
 
    ```bash
