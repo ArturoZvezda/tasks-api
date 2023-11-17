@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
-use CodeIgniter\RESTful\ResourceController;
 use CodeIgniter\API\ResponseTrait;
 
 class TaskController extends Controller
@@ -11,7 +10,7 @@ class TaskController extends Controller
 
     use ResponseTrait;
 
-    public function createTask()
+    public function create()
     {
         // Obtén los datos de la solicitud POST
         $title = $this->request->getPost('title');
@@ -28,7 +27,7 @@ class TaskController extends Controller
             'title' => $title,
             'description' => $description,
             'status' => 'P',
-            'user_id' => 1
+            'user_id' => $this->request->user_id, // El id del usuario se obtiene del token validado en AuthMiddleware
         ];
         $model->insert($data);
 
