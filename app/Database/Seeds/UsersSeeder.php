@@ -17,7 +17,7 @@ class UsersSeeder extends Seeder
             [
                 'username' => 'usuario1',
                 'email' => 'usuario1@example.com',
-                'password' => 'password1', // La función hashPassword se encargará de hashear la contraseña
+                'password' => 'password1', // La función hashPassword en UserModel se encargará de hashear la contraseña
                 'status' => 'A', // Activo
             ],
             [
@@ -26,10 +26,10 @@ class UsersSeeder extends Seeder
                 'password' => 'password2',
                 'status' => 'A',
             ],
-            // Agrega más usuarios según sea necesario
+            // Recordar que el campo status es obligatorio y el email debe ser único
+            // Puedes agregar mas tomando en cuenta lo anterior
         ];
 
-        // Insertar datos en la tabla users
         foreach ($data as $user) {
             $model->insert($user);
         }

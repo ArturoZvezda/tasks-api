@@ -5,6 +5,15 @@ namespace App\Controllers;
 use CodeIgniter\Controller;
 use CodeIgniter\API\ResponseTrait;
 
+/**
+ * Crea una nueva tarea en la base de datos usando valores recibidos desde una solicitud POST
+ * 
+ * Valida al usuario usando el middleware AuthMiddleware
+ * 
+ * Sus rutas son accesibles desde /api/task
+ * 
+ * @property \CodeIgniter\HTTP\RequestInterface $request
+ */
 class TaskController extends Controller
 {
 
@@ -12,11 +21,10 @@ class TaskController extends Controller
 
     public function create()
     {
-        // Obtén los datos de la solicitud POST
         $title = $this->request->getPost('title');
         $description = $this->request->getPost('description');
 
-        // Validación simple de datos (ajusta según tus necesidades)
+        // Validación simple de datos
         if (empty($title) || empty($description)) {
             return $this->fail('Todos los campos son obligatorios', 400);
         }
@@ -27,11 +35,10 @@ class TaskController extends Controller
             'title' => $title,
             'description' => $description,
             'status' => 'P',
-            'user_id' => $this->request->user_id, // El id del usuario se obtiene del token validado en AuthMiddleware
+            'user_id' => $this->request->user_id, // El id del usuario (@see AuthMiddleware)
         ];
         $model->insert($data);
 
-        // Responde con un mensaje de éxito
         return $this->respondCreated(['message' => 'Tarea creada exitosamente']);
     }
 }

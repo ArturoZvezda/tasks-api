@@ -6,6 +6,15 @@ use CodeIgniter\API\ResponseTrait;
 use App\Models\UserModel;
 use Firebase\JWT\JWT;
 
+/**
+ * Controlador para el registro y login de usuarios usando JWT
+ * 
+ * Para registrar un usuario necesitas proporcionar un nombre de usuario, un correo electrónico y una contraseña
+ * 
+ * Sus rutas son accesibles desde /api/register y /api/login
+ * 
+ * @property \CodeIgniter\HTTP\RequestInterface $request
+ */
 class AuthController extends BaseController
 {
     use ResponseTrait;

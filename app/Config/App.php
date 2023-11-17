@@ -176,6 +176,7 @@ class App extends BaseConfig
      */
     public bool $CSPEnabled = false;
 
+    // Secret key for hashing jwts
     public $jwtSecret = 't4sk4p1s3cr3tk3y';
 
 }
