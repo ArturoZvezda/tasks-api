@@ -18,7 +18,7 @@ funcionar con otra si se cambia la configuracion en el archivo correspondiente.
 1. Clona este repositorio en tu máquina local:
 
    ```bash
-   git clone https://github.com/tu-usuario/api-gestion-tareas.git
+   git clone https://github.com/ArturoZvezda/tasks-api.git
    cd api-gestion-tareas
 2. Instala las dependencias
 
