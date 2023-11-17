@@ -26,11 +26,11 @@ class Database extends Config
      */
     public array $default = [
         'DSN'          => '',
-        'hostname'     => 'localhost',
-        'username'     => '',
-        'password'     => '',
-        'database'     => '',
-        'DBDriver'     => 'MySQLi',
+        'hostname'     => "localhost\\SQLEXPRESS",
+        'username'     => 'developer',
+        'password'     => 'd3v3l0p3r',
+        'database'     => 'manager',
+        'DBDriver'     => 'sqlsrv',
         'DBPrefix'     => '',
         'pConnect'     => false,
         'DBDebug'      => true,
@@ -41,7 +41,7 @@ class Database extends Config
         'compress'     => false,
         'strictOn'     => false,
         'failover'     => [],
-        'port'         => 3306,
+        'port'         => '',
         'numberNative' => false,
     ];
 
