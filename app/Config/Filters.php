@@ -25,6 +25,7 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
+        // JWT authentication based filter
         'auth' => \App\Filters\AuthMiddleware::class,
     ];
 
