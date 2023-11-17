@@ -175,4 +175,7 @@ class App extends BaseConfig
      * @see http://www.w3.org/TR/CSP/
      */
     public bool $CSPEnabled = false;
+
+    public $jwtSecret = 't4sk4p1s3cr3tk3y';
+
 }
