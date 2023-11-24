@@ -23,7 +23,6 @@ class AuthController extends BaseController
     {
         // Recibe los datos del usuario desde la solicitud POST
         $userData = $this->request->getJSON(true);
-
         // Valida los datos recibidos
         if (empty($userData['username']) || empty($userData['password']) || empty($userData['email'])) {
             return $this->fail('Todos los campos son obligatorios', 400);
@@ -32,6 +31,7 @@ class AuthController extends BaseController
         // Verifica si el usuario ya existe
         $userModel = new UserModel();
         $existingUser = $userModel->where('email', $userData['email'])->first();
+
         if (!empty($existingUser)) {
             return $this->fail('El usuario ya está registrado', 400);
         }
